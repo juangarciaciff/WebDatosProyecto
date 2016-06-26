@@ -3,7 +3,9 @@
 ***
 - Autor: Juan A. García Cuevas
 - Fecha: 30/06/2016
+
 ***
+
 ## 1) Crear en "Sesame" un nuevo repositorio llamado “SocialNetwork”
 - En una ventana del navegador web:
 
