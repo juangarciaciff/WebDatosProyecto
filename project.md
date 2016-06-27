@@ -92,8 +92,9 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
     - En la pantalla de listado que se abre, seleccionar el repositorio "SocialNetwork".
 
 - Pulsar en el menú "Modify > Add" y en el nuevo formulario
-    - Seleccionar:
+    - Seleccionar / escribir:
         - RDF Data File: ... buscar y seleccionar el fichero "ManuChao.n3" descargado anteriormente...
+        - Base URI: http://ciff.curso2015/ontologies/owl/socialNetwork#instancia2
         - Data format: N3
 - Pulsar el botón [Upload]
 
@@ -105,6 +106,15 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 
 ![Sumario SocialNetwork](images/SocialNetworkCarga2B.png)
 
+- Para comprobar la operación ralizada, pulsar en el menú "Explore" y en el nuevo formulario:
+    - Escribir:
+        - Resource: sn:instancia2
+    - Pulsar [Enter]
+
+- El listado mostrado es el siguiente:
+
+![Consulta sn:instancia2](images/SocialNetworkCarga2C.png)
+
 ### 3.4) Consultar información de los "MusicRecording" en el repositorio enriquecido:
 
 En la ventana del navegador con openrdf-workbench de nuestro servidor local:
@@ -114,10 +124,10 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 ```
             PREFIX so: <http://schema.org/>
 
-            SELECT ?s
+            SELECT ?temas
             WHERE
             {
-            	?s ?p so:MusicRecording
+            	?Temas ?p so:MusicRecording
             }
 ```
 
@@ -127,7 +137,9 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 
 ![MusicRecording Result](images/MusicRecordingResult.png)
 
+- Y si pulsamos en uno de los links, podremos acceder a la información del tema correspondiente:
 
+![MusicRecording Result](images/MusicRecordingResultOne.png)
 
 
  
