@@ -30,6 +30,8 @@ En una ventana del navegador web:
 
 ![Sumario SocialNetwork](images/SocialNetworkNuevo.png)
 
+***
+
 ## 2) Añadir el fichero “Entidades.n3” al repositorio “SocialNetwork”
 
 En la misma ventana del navegador web anterior:
@@ -48,6 +50,8 @@ En la misma ventana del navegador web anterior:
 - Si todo ha ido bien aparecerá la pantalla con los datos del sumario del nuevo repositorio.
 
 ![Sumario SocialNetwork](images/SocialNetworkCarga1B.png)
+
+***
 
 ## 3) Enriquecer la instancia 2
 Para la instancia 2 se procederá a enriquecer la información con información embebida en páginas HTML. Partiendo de la información que se habrá recopilado en el archivo “manuChao.n3”, proceder a volcarlo en el repositorio de SocialNetwork y hacer una query que liste los “MusicRecording”.
@@ -141,12 +145,9 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 
 ![MusicRecording Result](images/MusicRecordingResultOne.png)
 
-
 ***
 
 ## 4) Partiendo del ejercicio 5_1, y según la lista de datasets sugeridos (ver más abajo), se determinará que propiedades nos interesa incorporar a nuestras entidades.
-
-
 
 ## 5) Enriquecer instancia1, instancia3 e instancia 4
 
@@ -174,6 +175,9 @@ es:
 
 ![Instancia 4](images/Instancia4.png)
 
+- [Script enquirer2.py](enquirer2.py)
+
 - [Texto de salida por pantalla de ejecución del script](enquirer2_resultado.txt)
 
+***
 
