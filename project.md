@@ -127,7 +127,7 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
             SELECT ?temas
             WHERE
             {
-            	?Temas ?p so:MusicRecording
+            	?temas ?p so:MusicRecording
             }
 ```
 
@@ -142,14 +142,38 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 ![MusicRecording Result](images/MusicRecordingResultOne.png)
 
 
+***
+
+## 4) Partiendo del ejercicio 5_1, y según la lista de datasets sugeridos (ver más abajo), se determinará que propiedades nos interesa incorporar a nuestras entidades.
+
+
+
+## 5) Enriquecer instancia1, instancia3 e instancia 4
+
+Para la instancia1, instancia3 e instancia 4 se procederá a enriquecer la información con información de los datasets previamente recomendados de LOD Cloud. La información se recuperará programáticamente sirviéndose de fichero “enquierer.py” que hay en la carpeta de Ejercicio Final.
+
+- a. En él se muestra los pasos inconclusos para la recuperación de información de dbpedia para enriquecer la instancia1. 
+- b. Para proceder a enriquecer la instancia3, e insntacia4 se procederá a elaborar las SPARQL queries de los métodos “getLinkedmdbResource” y “getWebenemasunoResource”.
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+## 6) Para superar la prueba a nivel básico:
+
+Para superar la prueba a nivel básico bastara con imprimir los recursos de los
+repositorios remotos que coinciden con el label de mis instancias locales, esto
+es:
+
+- a. Para el caso de dbpedia y tal y como está definido, se obtiene el recurso “http://dbpedia.org/resource/Alicia_Keys” para la instancia 1.
+
+![Instancia 1](images/Instancia1.png)
+
+- b. Para el caso de Linkedmdb, se obtendrá aquella instancia (o instancias) cuyo nombre coincida con el (los) label de la instancia 3.
+
+![Instancia 3](images/Instancia3.png)
+
+- c. Para el caso de WebN+1, se obtendrá aquella instancia (o instancias) cuyo nombre coincida con el (los) label de la instancia 4.
+
+![Instancia 4](images/Instancia4.png)
+
+- [Texto de salida por pantalla de ejecución del script](enquirer2_resultado.txt)
+
+

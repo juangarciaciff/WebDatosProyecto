@@ -1,0 +1,78 @@
+wod@wod-VirtualBox:~$ python enquired2.py 
+
+================================================
+=== Busqueda de informacion para la instancia 1
+================================================
+
+>>> getLocalLabel
+      - Label: Alicia Keys
+      - Lang.: en
+
+    * Resultados:
+[(u'Alicia Keys', u'en')]
+ 
+>>> getDBpediaResource
+    * Resultados:
+{u'head': {u'link': [], u'vars': [u's']}, u'results': {u'distinct': False, u'bindings': [{u's': {u'type': u'uri', u'value': u'http://dbpedia.org/resource/Alicia_Keys'}}], u'ordered': True}}
+      -> Resource: http://dbpedia.org/resource/Alicia_Keys
+
+================================================
+=== Busqueda de informacion para la instancia 3
+================================================
+
+>>> getLocalLabel
+      - Label: Batman
+      - Label: Batman
+      - Lang.: es
+      - Label: Batman
+      - Lang.: en
+
+    * Resultados:
+[(u'Batman', None), (u'Batman', u'es'), (u'Batman', u'en')]
+ 
+>>> getLinkedmdbResource
+    * Resultados: 
+{u'head': {u'vars': [u'resource']}, u'results': {u'bindings': [{u'resource': {u'type': u'uri', u'value': u'http://data.linkedmdb.org/resource/film/2'}}, {u'resource': {u'type': u'uri', u'value': u'http://data.linkedmdb.org/resource/film/3'}}, {u'resource': {u'type': u'uri', u'value': u'http://data.linkedmdb.org/resource/film/12583'}}]}}
+      -> Resource: http://data.linkedmdb.org/resource/film/2
+      -> Resource: http://data.linkedmdb.org/resource/film/3
+      -> Resource: http://data.linkedmdb.org/resource/film/12583
+ 
+>>> getLinkedmdbResource
+    * Resultados: 
+{u'head': {u'vars': [u'resource']}, u'results': {u'bindings': []}}
+ 
+>>> getLinkedmdbResource
+    * Resultados: 
+{u'head': {u'vars': [u'resource']}, u'results': {u'bindings': [{u'resource': {u'type': u'uri', u'value': u'http://data.linkedmdb.org/resource/film/2'}}, {u'resource': {u'type': u'uri', u'value': u'http://data.linkedmdb.org/resource/film/3'}}, {u'resource': {u'type': u'uri', u'value': u'http://data.linkedmdb.org/resource/film/12583'}}]}}
+      -> Resource: http://data.linkedmdb.org/resource/film/2
+      -> Resource: http://data.linkedmdb.org/resource/film/3
+      -> Resource: http://data.linkedmdb.org/resource/film/12583
+
+================================================
+=== Busqueda de informacion para la instancia 4
+================================================
+
+>>> getLocalLabel
+      - Label: Un vino cosmopolita
+      - Label: Un vino cosmopolita
+      - Lang.: es
+      - Label: Un vino cosmopolita
+      - Lang.: en
+
+    * Resultados:
+[(u'Un vino cosmopolita', None), (u'Un vino cosmopolita', u'es'), (u'Un vino cosmopolita', u'en')]
+ 
+>>> getWebenemasunoResource
+    * Resultados: 
+{u'head': {u'link': [], u'vars': [u'resource']}, u'results': {u'distinct': False, u'bindings': [{u'resource': {u'type': u'uri', u'value': u'http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES'}}], u'ordered': True}}
+      ->The resource: http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES
+ 
+>>> getWebenemasunoResource
+    * Resultados: 
+{u'head': {u'link': [], u'vars': [u'resource']}, u'results': {u'distinct': False, u'bindings': [{u'resource': {u'type': u'uri', u'value': u'http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES'}}], u'ordered': True}}
+      ->The resource: http://webenemasuno.linkeddata.es/elviajero/resource/Guide/20060513ELPVIALBV_5.TES
+ 
+>>> getWebenemasunoResource
+    * Resultados: 
+{u'head': {u'link': [], u'vars': [u'resource']}, u'results': {u'distinct': False, u'bindings': [], u'ordered': True}}
+wod@wod-VirtualBox:~$ 
