@@ -263,13 +263,11 @@ Para obtener la información mostrada en las capturas de pantalla anteriores hay
 ## 7) (Opcional – Nivel Medio). Se procederá a obtener alguna información extra (alguna propiedad) de los recursos obtenidos remotos.
 
 
-Para este ejercicio he versionado el script original enquirer.py en este otro (enquirer3.py):
+Para este ejercicio he versionado el script original enquirer.py en este otro (enquirer3.py). En esta versión he modificado las query de SPARQL, y guardo los resultados en ficheros JSON.
 
 - [Script enquirer3.py](enquirer3.py)
 
 - [Texto de salida por pantalla de ejecución del script enquirer3.py](enquirer3_resultado.txt)
-
-
 
 ### - DBPedia_ES
 ```
