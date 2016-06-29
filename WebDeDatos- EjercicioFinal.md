@@ -271,21 +271,21 @@ Para este ejercicio he versionado el script original enquirer.py en este otro (e
 
 
 
-### - BBPedia_ES
+### - DBPedia_ES
 ```
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
     PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
     PREFIX dbo: <http://dbpedia.org/ontology/>
     SELECT ?s ?birthDate ?birthPlace ?birthName ?abstract
-    WHERE { 
+    WHERE {
     	?s dbo:birthDate ?birthDate .
     	?s dbo:birthPlace ?birthPlace .
     	?s dbo:birthName ?birthName .
     	?s dbo:abstract ?abstract .
-    	?s rdfs:label "Alicia Keys"@en . 
-    	?s rdf:type foaf:Person 
-    } 
+    	?s rdfs:label "Alicia Keys"@en .
+    	?s rdf:type foaf:Person
+    }
 ```
 ![dbpediaQ](images/dbpediaQ.png)
 ![dbpediaR](images/dbpediaR.png)
