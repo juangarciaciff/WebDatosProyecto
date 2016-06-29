@@ -149,14 +149,92 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 
 ## 4) Partiendo del ejercicio 5_1, y según la lista de datasets sugeridos (ver más abajo), se determinará que propiedades nos interesa incorporar a nuestras entidades.
 
+### - BBPedia_ES
+
+    - SPARQL:
+        - [http://es.dbpedia.org/sparql](http://es.dbpedia.org/sparql)
+
+    - Ejemplo:
+        - [http://www.dbpedia.org/page/Alicia_Keys](http://www.dbpedia.org/page/Alicia_Keys)
+
+    - Propiedades que se podrían seleccionar:
+        - dbo:abstract
+        - dbo:birthDate
+        - dbo:birthPlace
+        - dbo:birthName
+        - dbp:ocupation
+        - dbp:yearsActive
+        - foaf:homepage
+        - ...
+
+![DBPedia](images/dbpedia.png)
+
+### - MusicBrainz
+
+    - SPARQL:
+        - [http://dbtune.org/musicbrainz/sparql](http://dbtune.org/musicbrainz/sparql)
+    - Ejemplo:
+        - [http://dbtune.org/musicbrainz/resource/artist/704acdbb-1415-4782-b0b6-0596b8c55e46](http://dbtune.org/musicbrainz/resource/artist/704acdbb-1415-4782-b0b6-0596b8c55e46)
+
+    - Propiedades que se podrían seleccionar:
+        - _No se ha podido determinar, porque en el momento de hacer el ejercicio: Service Temporarily Unavailable_
+
+![DBTune](images/dbtune.png)
+
+### - Web n+1 el viajero
+
+    - SPARQL:
+        - [http://webenemasuno.linkeddata.es/sparql](http://webenemasuno.linkeddata.es/sparql)
+    - Ejemplo:
+        - [http://webenemasuno.linkeddata.es/page/elviajero/resource/Guide/20060513ELPVIALBV_5.TES](http://webenemasuno.linkeddata.es/page/elviajero/resource/Guide/20060513ELPVIALBV_5.TES)
+
+    - Propiedades que se podrían seleccionar:
+        - sioc:title
+        - sioc:created_at
+        - sioc:has_creator
+        - opmo:content
+        - opmopviajero:language
+        - ...
+
+![linkeddata](images/webenemasuno.png)
+
+### - MDB
+
+    - SPARQL:
+        - [http://data.linkedmdb.org/sparql](http://data.linkedmdb.org/sparql)
+    - Ejemplo:
+        - [http://data.linkedmdb.org/page/film/2](http://data.linkedmdb.org/page/film/2)
+
+    - Propiedades que se podrían seleccionar:
+        - dc:title
+        - dc:date
+        - movie:actor
+        - movie:director
+        - movie:initial_release_date
+        - ...
+
+> NOTA: La web de Batman es: http://data.linkedmdb.org/page/film/2
+
+![linkedmdb](images/linkedmdb.png)
+
+
 ## 5) Enriquecer instancia1, instancia3 e instancia 4
 
 Para la instancia1, instancia3 e instancia 4 se procederá a enriquecer la información con información de los datasets previamente recomendados de LOD Cloud. La información se recuperará programáticamente sirviéndose de fichero “enquierer.py” que hay en la carpeta de Ejercicio Final.
 
-- a. En él se muestra los pasos inconclusos para la recuperación de información de dbpedia para enriquecer la instancia1. 
+- a. En él se muestra los pasos inconclusos para la recuperación de información de dbpedia para enriquecer la instancia1.
 - b. Para proceder a enriquecer la instancia3, e insntacia4 se procederá a elaborar las SPARQL queries de los métodos “getLinkedmdbResource” y “getWebenemasunoResource”.
- 
- 
+
+> NOTA: sitio web en el que buscar PREFIX (Ej: opmo) para obtener su URI (http://openprovenance.org/model/opmo#)
+>   http://prefix.cc/
+>   Ej: PREFIX opmo:<http://openprovenance.org/model/opmo#>
+
+Para este ejercicio he versionado el script original enquirer.py en este otro (enquirer2.py):
+
+- [Script enquirer2.py](enquirer2.py)
+
+- [Texto de salida por pantalla de ejecución del script enquirer2.py](enquirer2_resultado.txt)
+
 ## 6) Para superar la prueba a nivel básico:
 
 Para superar la prueba a nivel básico bastara con imprimir los recursos de los
@@ -175,9 +253,79 @@ es:
 
 ![Instancia 4](images/Instancia4.png)
 
-- [Script enquirer2.py](enquirer2.py)
-
-- [Texto de salida por pantalla de ejecución del script](enquirer2_resultado.txt)
+Para obtener la información mostrada en las capturas de pantalla anteriores hay que abrir un terminal y ejecutar el script de python [enquirer2.py](enquirer2.py) mediante la siguiente instrucción:
+```bash
+    python enquirer2.py
+```
 
 ***
 
+## 7) (Opcional – Nivel Medio). Se procederá a obtener alguna información extra (alguna propiedad) de los recursos obtenidos remotos.
+
+
+Para este ejercicio he versionado el script original enquirer.py en este otro (enquirer3.py):
+
+- [Script enquirer3.py](enquirer3.py)
+
+- [Texto de salida por pantalla de ejecución del script enquirer3.py](enquirer3_resultado.txt)
+
+
+
+### - BBPedia_ES
+```
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    SELECT ?s ?birthDate ?birthPlace ?birthName ?abstract
+    WHERE { 
+    	?s dbo:birthDate ?birthDate .
+    	?s dbo:birthPlace ?birthPlace .
+    	?s dbo:birthName ?birthName .
+    	?s dbo:abstract ?abstract .
+    	?s rdfs:label "Alicia Keys"@en . 
+    	?s rdf:type foaf:Person 
+    } 
+```
+![dbpediaQ](images/dbpediaQ.png)
+![dbpediaR](images/dbpediaR.png)
+
+### - MusicBrainz
+
+![DBTune error](images/dbtune-erorr.png)
+
+### - Web n+1 el viajero
+```
+PREFIX sioc:<http://rdfs.org/sioc/ns#>
+PREFIX opmopviajero:<http://webenemasuno.linkeddata.es/ontology/OPMO/>
+PREFIX opmo:<http://openprovenance.org/model/opmo#>
+SELECT 
+	?title
+	?created_at
+	?has_creator
+	?content
+	?language
+WHERE {
+	?s sioc:title ?title.
+	?s sioc:created_at ?created_at.
+	?s sioc:has_creator ?has_creator.
+	?s opmo:content ?content.
+	?s opmopviajero:language ?language.
+	?s sioc:title "Un vino cosmopolita".
+	?s opmopviajero:language "es"
+}
+```
+![linkeddataQ](images/linkeddataQ.png)
+![linkeddataR](images/linkeddataR.png)
+```
+
+
+
+***
+
+## 8) (Opcional – Nivel Alto). Insertar las tripletas obtenidas con el enquierer en el repositorio SocialNetwork:
+
+- a. Volcar las tripletas a un fichero y volcarlas al repositorio SocialNetwork via el workbench
+- b. O insertarlas directamente en el repositorio mediante la librería SPARQLWrapper.
+
+***
