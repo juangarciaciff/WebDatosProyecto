@@ -308,11 +308,9 @@ Para este ejercicio he versionado el script original enquirer.py en este otro (e
 ```
 ![dbpediaQ](images/dbpediaQ.png)
 
-![dbpediaR](images/dbpediaR.png)
-
 ### - MusicBrainz
 
->NOTA: E servicio no está disponible
+>NOTA: El servicio no está disponible
 
 ### - Web n+1 el viajero
 ```
@@ -338,7 +336,6 @@ Para este ejercicio he versionado el script original enquirer.py en este otro (e
 ![linkeddataQ](images/linkeddataQ.png)
 
 ![linkeddataR](images/linkeddataR.png)
-```
 
 ***
 
