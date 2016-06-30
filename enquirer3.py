@@ -58,7 +58,14 @@ def getDBpediaResource (label, lang, endpoint):
     print results
     for result in results["results"]["bindings"]:
         resource = result["s"]["value"]
+        abstract = result["abstract"]["value"]
+        birthDate = result["birthDate"]["value"]
+        birthPlace = result["birthPlace"]["value"]
+        birthName = result["birthName"]["value"]
         print "      -> Resource: " + resource
+        print "      -> birthDate: " + birthDate
+        print "      -> birthPlace: " + birthPlace
+        print "      -> birthName: " + birthName
 
 ####################################################################################################
 ### Obtiene informacion de Linkedmdb
@@ -103,8 +110,13 @@ def getWebenemasunoResource (label, lang, endpoint):
     print "    * Resultados: "
     print results
     for result in results["results"]["bindings"]:
-        resource = result["resource"]["value"]
-        print "      ->The resource: " + resource
+        title = result["title"]["value"]
+        created_at = result["created_at"]["value"]
+        language = result["language"]["value"]
+        content = result["content"]["value"]
+        print "      ->Title: " + title
+        print "      ->Created at: " + created_at
+        print "      ->Language: " + language
 
 ####################################################################################################
 ### Main
