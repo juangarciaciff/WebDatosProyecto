@@ -47,13 +47,13 @@ def getDBpediaResource (label, lang, endpoint):
     if (lang):
         queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?s ?birthDate ?birthPlace ?birthName ?abstract WHERE { ?s dbo:birthDate ?birthDate . ?s dbo:birthPlace ?birthPlace . ?s dbo:birthName ?birthName . ?s dbo:abstract ?abstract . ?s rdfs:label \"" + label + "\"@" +lang + " . ?s rdf:type foaf:Person }"; 
     else:
-        queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?s WHERE { ?s rdfs:label \"" + label + "\" . ?s rdf:type foaf:Person } " 
+        queryString = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT ?s ?birthDate ?birthPlace ?birthName ?abstract WHERE { ?s dbo:birthDate ?birthDate . ?s dbo:birthPlace ?birthPlace . ?s dbo:birthName ?birthName . ?s dbo:abstract ?abstract . ?s rdfs:label \"" + label + " . ?s rdf:type foaf:Person }"; 
     sparqlDBPedia.setQuery(queryString)
     sparqlDBPedia.setReturnFormat(JSON)
     query   = sparqlDBPedia.query()
     results = query.convert()
-    with open('/home/wod/instanacia1.json', 'w') as outfile:
-        json.dump(results, outfile) 
+    with open('/home/wod/instancia1.json', 'w') as outfile:
+        json.dump(results, outfile, indent=4, sort_keys=True, separators=(',', ':')) 
     print "    * Resultados:"
     print results
     for result in results["results"]["bindings"]:
@@ -75,8 +75,8 @@ def getLinkedmdbResource (label, lang, endpoint):
     sparqlLinkedmdb.setReturnFormat(JSON)
     query   = sparqlLinkedmdb.query()
     results = query.convert()
-    with open('/home/wod/instanacia3.json', 'w') as outfile:
-        json.dump(results, outfile) 
+    with open('/home/wod/instancia3.json', 'w') as outfile:
+        json.dump(results, outfile, indent=4, sort_keys=True, separators=(',', ':')) 
     print "    * Resultados: "
     print results
     for result in results["results"]["bindings"]:
@@ -98,8 +98,8 @@ def getWebenemasunoResource (label, lang, endpoint):
     sparqlWebenemasuno.setReturnFormat(JSON)
     query   = sparqlWebenemasuno.query()
     results = query.convert()
-    with open('/home/wod/instanacia4.json', 'w') as outfile:
-        json.dump(results, outfile) 
+    with open('/home/wod/instancia4.json', 'w') as outfile:
+        json.dump(results, outfile, indent=4, sort_keys=True, separators=(',', ':')) 
     print "    * Resultados: "
     print results
     for result in results["results"]["bindings"]:
@@ -145,3 +145,4 @@ if __name__ == '__main__':
     for result in lista:
         (label, lang) = result
         resource = getWebenemasunoResource (label, lang, endpoint);
+

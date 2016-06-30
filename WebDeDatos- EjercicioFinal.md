@@ -27,6 +27,8 @@ En una ventana del navegador web:
     - Pulsar el botón [Create]
 
 - Si todo ha ido bien aparecerá la pantalla con los datos del sumario del nuevo repositorio.
+    - Number of Statements  0
+    - Number of Labeled Contexts    0
 
 ![Sumario SocialNetwork](images/SocialNetworkNuevo.png)
 
@@ -39,7 +41,7 @@ En la misma ventana del navegador web anterior:
 - Pulsar en el menú "Repositories"
     - En la pantalla de listado que se abre, seleccionar el repositorio "SocialNetwork".
 
-- Pulsar en el menú "Modify > Add" y en el nuevo formulario
+- Pulsar en el menú "Modify > Add" y en el nuevo formulario:
     - Seleccionar:
         - RDF Data File: ... buscar y seleccionar el fichero "Entities_2v0.n3" proporcionado con el ejercicio ...
         - Data format: N3
@@ -47,7 +49,9 @@ En la misma ventana del navegador web anterior:
 
 ![Sumario SocialNetwork](images/SocialNetworkCarga1A.png)
 
-- Si todo ha ido bien aparecerá la pantalla con los datos del sumario del nuevo repositorio.
+- Si todo ha ido bien aparecerá la pantalla con los datos actualizados del sumario del repositorio.
+    - Number of Statements  12
+    - Number of Labeled Contexts    1
 
 ![Sumario SocialNetwork](images/SocialNetworkCarga1B.png)
 
@@ -55,6 +59,7 @@ En la misma ventana del navegador web anterior:
 
 ## 3) Enriquecer la instancia 2
 Para la instancia 2 se procederá a enriquecer la información con información embebida en páginas HTML. Partiendo de la información que se habrá recopilado en el archivo “manuChao.n3”, proceder a volcarlo en el repositorio de SocialNetwork y hacer una query que liste los “MusicRecording”.
+
 ### 3.1) Buscar una página web con información de Manu Chao en el sitio web de la BBC:
 
 En otra ventana del navegador web:
@@ -95,7 +100,7 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 - Pulsar en el menú "Repositories"
     - En la pantalla de listado que se abre, seleccionar el repositorio "SocialNetwork".
 
-- Pulsar en el menú "Modify > Add" y en el nuevo formulario
+- Pulsar en el menú "Modify > Add" y en el nuevo formulario:
     - Seleccionar / escribir:
         - RDF Data File: ... buscar y seleccionar el fichero "ManuChao.n3" descargado anteriormente...
         - Base URI: http://ciff.curso2015/ontologies/owl/socialNetwork#instancia2
@@ -151,69 +156,77 @@ En la ventana del navegador con openrdf-workbench de nuestro servidor local:
 
 ### - BBPedia_ES
 
-    - SPARQL:
-        - [http://es.dbpedia.org/sparql](http://es.dbpedia.org/sparql)
+- SPARQL:
+    - [http://es.dbpedia.org/sparql](http://es.dbpedia.org/sparql)
 
-    - Ejemplo:
-        - [http://www.dbpedia.org/page/Alicia_Keys](http://www.dbpedia.org/page/Alicia_Keys)
+- Ejemplo:
+    - [http://www.dbpedia.org/page/Alicia_Keys](http://www.dbpedia.org/page/Alicia_Keys)
 
-    - Propiedades que se podrían seleccionar:
-        - dbo:abstract
-        - dbo:birthDate
-        - dbo:birthPlace
-        - dbo:birthName
-        - dbp:ocupation
-        - dbp:yearsActive
-        - foaf:homepage
-        - ...
+- Propiedades que se podrían seleccionar:
+    - dbo:abstract
+    - dbo:birthDate
+    - dbo:birthPlace
+    - dbo:birthName
+    - dbp:ocupation
+    - dbp:yearsActive
+    - foaf:homepage
+    - ...
 
-![DBPedia](images/dbpedia.png)
+![dbpedia sparql](images/dbpedia-sparql.png)
+
+![dbpedia](images/dbpedia.png)
 
 ### - MusicBrainz
 
-    - SPARQL:
-        - [http://dbtune.org/musicbrainz/sparql](http://dbtune.org/musicbrainz/sparql)
-    - Ejemplo:
-        - [http://dbtune.org/musicbrainz/resource/artist/704acdbb-1415-4782-b0b6-0596b8c55e46](http://dbtune.org/musicbrainz/resource/artist/704acdbb-1415-4782-b0b6-0596b8c55e46)
+- SPARQL:
+    - [http://dbtune.org/musicbrainz/sparql](http://dbtune.org/musicbrainz/sparql)
+- Ejemplo:
+    - [http://dbtune.org/musicbrainz/resource/artist/704acdbb-1415-4782-b0b6-0596b8c55e46](http://dbtune.org/musicbrainz/resource/artist/704acdbb-1415-4782-b0b6-0596b8c55e46)
 
-    - Propiedades que se podrían seleccionar:
-        - _No se ha podido determinar, porque en el momento de hacer el ejercicio: Service Temporarily Unavailable_
+- Propiedades que se podrían seleccionar:
+    - _No se ha podido determinar, porque en el momento de hacer el ejercicio: Service Temporarily Unavailable_
 
-![DBTune](images/dbtune.png)
+![dbtune](images/dbtune-sparql.png)
+
+![dbtune](images/dbtune.png)
 
 ### - Web n+1 el viajero
 
-    - SPARQL:
-        - [http://webenemasuno.linkeddata.es/sparql](http://webenemasuno.linkeddata.es/sparql)
-    - Ejemplo:
-        - [http://webenemasuno.linkeddata.es/page/elviajero/resource/Guide/20060513ELPVIALBV_5.TES](http://webenemasuno.linkeddata.es/page/elviajero/resource/Guide/20060513ELPVIALBV_5.TES)
+- SPARQL:
+    - [http://webenemasuno.linkeddata.es/sparql](http://webenemasuno.linkeddata.es/sparql)
+- Ejemplo:
+    - [http://webenemasuno.linkeddata.es/page/elviajero/resource/Guide/20060513ELPVIALBV_5.TES](http://webenemasuno.linkeddata.es/page/elviajero/resource/Guide/20060513ELPVIALBV_5.TES)
 
-    - Propiedades que se podrían seleccionar:
-        - sioc:title
-        - sioc:created_at
-        - sioc:has_creator
-        - opmo:content
-        - opmopviajero:language
-        - ...
+- Propiedades que se podrían seleccionar:
+    - sioc:title
+    - sioc:created_at
+    - sioc:has_creator
+    - opmo:content
+    - opmopviajero:language
+    - ...
+
+![linkeddata sparql](images/webenemasuno-sparql.png)
 
 ![linkeddata](images/webenemasuno.png)
 
 ### - MDB
 
-    - SPARQL:
-        - [http://data.linkedmdb.org/sparql](http://data.linkedmdb.org/sparql)
-    - Ejemplo:
-        - [http://data.linkedmdb.org/page/film/2](http://data.linkedmdb.org/page/film/2)
+- SPARQL:
+    - [http://data.linkedmdb.org/sparql](http://data.linkedmdb.org/sparql)
+- Ejemplo:
+    - [http://data.linkedmdb.org/page/film/2](http://data.linkedmdb.org/page/film/2)
 
-    - Propiedades que se podrían seleccionar:
-        - dc:title
-        - dc:date
-        - movie:actor
-        - movie:director
-        - movie:initial_release_date
-        - ...
+- Propiedades que se podrían seleccionar:
+    - dc:title
+    - dc:date
+    - movie:actor
+    - movie:director
+    - movie:initial_release_date
+    - ...
 
 > NOTA: La web de Batman es: http://data.linkedmdb.org/page/film/2
+
+![linkedmdb sparql](images/linkedmdb-sparql.png)
 
 ![linkedmdb](images/linkedmdb.png)
 
@@ -269,55 +282,63 @@ Para este ejercicio he versionado el script original enquirer.py en este otro (e
 
 - [Texto de salida por pantalla de ejecución del script enquirer3.py](enquirer3_resultado.txt)
 
+- [Fichero JSON para la instancia 1](instancia1.json)
+
+- [Fichero JSON para la instancia 4](instancia4.json)
+
 ### - DBPedia_ES
 ```
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX dbo: <http://dbpedia.org/ontology/>
-    SELECT ?s ?birthDate ?birthPlace ?birthName ?abstract
+    SELECT ?s
+           ?birthDate
+           ?birthPlace
+           ?birthName
+           ?abstract
     WHERE {
-    	?s dbo:birthDate ?birthDate .
-    	?s dbo:birthPlace ?birthPlace .
-    	?s dbo:birthName ?birthName .
-    	?s dbo:abstract ?abstract .
-    	?s rdfs:label "Alicia Keys"@en .
-    	?s rdf:type foaf:Person
+     	   ?s dbo:birthDate ?birthDate.
+    	   ?s dbo:birthPlace ?birthPlace.
+    	   ?s dbo:birthName ?birthName.
+    	   ?s dbo:abstract ?abstract.
+    	   ?s rdfs:label "Alicia Keys"@es.
+    	   ?s rdf:type foaf:Person
     }
 ```
 ![dbpediaQ](images/dbpediaQ.png)
+
 ![dbpediaR](images/dbpediaR.png)
 
 ### - MusicBrainz
 
-![DBTune error](images/dbtune-erorr.png)
+>NOTA: E servicio no está disponible
 
 ### - Web n+1 el viajero
 ```
-PREFIX sioc:<http://rdfs.org/sioc/ns#>
-PREFIX opmopviajero:<http://webenemasuno.linkeddata.es/ontology/OPMO/>
-PREFIX opmo:<http://openprovenance.org/model/opmo#>
-SELECT 
-	?title
-	?created_at
-	?has_creator
-	?content
-	?language
-WHERE {
-	?s sioc:title ?title.
-	?s sioc:created_at ?created_at.
-	?s sioc:has_creator ?has_creator.
-	?s opmo:content ?content.
-	?s opmopviajero:language ?language.
-	?s sioc:title "Un vino cosmopolita".
-	?s opmopviajero:language "es"
+    PREFIX sioc:<http://rdfs.org/sioc/ns#>
+    PREFIX opmopviajero:<http://webenemasuno.linkeddata.es/ontology/OPMO/>
+    PREFIX opmo:<http://openprovenance.org/model/opmo#>
+    SELECT
+    	?title
+    	?created_at
+    	?has_creator
+    	?content
+    	?language
+    WHERE {
+    	?s sioc:title ?title.
+    	?s sioc:created_at ?created_at.
+    	?s sioc:has_creator ?has_creator.
+    	?s opmo:content ?content.
+    	?s opmopviajero:language ?language.
+    	?s sioc:title "Un vino cosmopolita".
+    	?s opmopviajero:language "es"
 }
 ```
 ![linkeddataQ](images/linkeddataQ.png)
+
 ![linkeddataR](images/linkeddataR.png)
 ```
-
-
 
 ***
 

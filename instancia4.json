@@ -1,0 +1,40 @@
+{
+    "head":{
+        "link":[],
+        "vars":[
+            "title",
+            "created_at",
+            "has_creator",
+            "content",
+            "language"
+        ]
+    },
+    "results":{
+        "bindings":[
+            {
+                "content":{
+                    "type":"literal",
+                    "value":"Lenta pero inexorablemente, los tintos del Pened\u00e9s se abren camino en el sector del consumo m\u00e1s tradicional, donde s\u00f3lo ten\u00edan cabida sus blancos. Un sector que mayoritariamente se decanta por los vino de la denominaci\u00f3n de origen Rioja, admite a rega\u00f1adientes los de Ribera del Duero, accede curioso a los caldos del Priorato, y acepta como una curiosidad los Jumilla, Toro, Bierzo o Cigales. Y que menosprecia, porque ignora, la enolog\u00eda tinta de Castilla-La Mancha. As\u00ed son, todav\u00eda, las cosas.\nPor eso, el trabajo de la bodega de Sumarroca es tan encomiable como digno de apoyo. Est\u00e1n desarrollando, junto a la Universidad Rovira i Virgili de Tarragona y la Universidad de Davis, en California, un estudio llamado <i>Vi\u00f1as del mundo</i> con el que se pretende analizar 450 variedades de uva de las principales regiones vitivin\u00edcolas del planeta.\nY aplican los resultados a vinos como este B\u00f2ria, un dise\u00f1o donde se prima la potencia, la fruta marcada, el roble preciso y la complejidad varietal.\nBuen vino, cosmopolita, sin fallos, pero, \u00a1ay!, tambi\u00e9n sin arraigo.\n"
+                },
+                "created_at":{
+                    "type":"literal",
+                    "value":"20060513"
+                },
+                "has_creator":{
+                    "type":"uri",
+                    "value":"http://webenemasuno.linkeddata.es/elviajero/resource/Account/ACCCARLOS_DELGADO"
+                },
+                "language":{
+                    "type":"literal",
+                    "value":"es"
+                },
+                "title":{
+                    "type":"literal",
+                    "value":"Un vino cosmopolita"
+                }
+            }
+        ],
+        "distinct":false,
+        "ordered":true
+    }
+}
